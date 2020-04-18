@@ -4,13 +4,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $router) {
-    $router->addRoute('GET', '/users', 'UsersController@index');
-    // {id} must be a number (\d+)
-    $router->addRoute('GET', '/users/{id:\d+}', 'UsersController@show');
 
-    $router->addRoute('GET', '/posts', 'PostsController@index');
-    // {id} must be a number (\d+)
-    $router->addRoute('GET', '/posts/{id:\d+}', 'PostsController@show');
+    $router->addRoute('GET', '/', 'CountriesController@index');
 
 
 
