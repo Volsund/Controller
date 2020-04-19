@@ -2,12 +2,18 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use App\Core\Database;
+
+use Medoo\Medoo;
+
+
+$databaseConfig = require_once __DIR__ . '/config/configdata.php';
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $router) {
 
     $router->addRoute('GET', '/', 'CountriesController@index');
 
-
+    $router->addRoute('GET', '/countries/{id:\d+}', 'CountriesController@show');
 
 
 });

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Core\Database;
 use App\Core\View;
 
 class CountriesController
@@ -9,14 +10,25 @@ class CountriesController
 
     public function index()
     {
-        // Create some logic
-        $countries = [
-            'LV', 'EE', 'LT'
-        ];
+        $db = Database::getInstance()->connection();
 
-        View::show('Countries/index.php', [
-            'countries' => $countries
+        $countries = $db->select('countries', '*');
+
+        View::show('Countries/index.php',[
+            'countries'=>$countries
         ]);
     }
 
+    public function show(array $params){
+
+        $db = Database::getInstance()->connection();
+
+        $country = $db->select('countries', '*',[
+            'id[=]' =>(int) $params['id']
+        ])[0];
+
+        View::show('Countries/show.php',[
+            'country'=>$country
+        ]);
+    }
 }

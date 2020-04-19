@@ -1,3 +1,11 @@
-<b>This is countries index.</b>
+<b>Look at all the countries:</b>
 
-<?php var_dump($countries); ?>
+<ul>
+
+    <?php foreach ($countries as $country): ?>
+
+        <li><?php echo $country['name']; ?></li>
+
+    <?php endforeach; ?>
+
+</ul>
