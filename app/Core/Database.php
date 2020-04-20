@@ -27,29 +27,4 @@ class Database
     public function connection (){
         return $this->connection;
     }
-
-
-
-
-
-
-
-
-//    private $database;
-//
-//    public function __construct($database)
-//    {
-//        $this->database=$database;
-//    }
-//
-//    public static function addCountry($database,string $name){
-//        $database->insert('countries', [
-//            'name' => $name,
-//        ]);
-//    }
-//
-//    public static function allCountries(){
-//
-//    }
-
 }
