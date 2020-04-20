@@ -16,26 +16,27 @@
     </div>
 </header>
 
-<h1><?php echo $country['name']; ?></h1>
+<div class="content">
+    <h1><?php echo $country['name']; ?></h1>
 
-<h2>Most interesting cities in <?php echo $country['name']; ?>: </h2>
-<ul>
-    <?php foreach ($cities as $city): ?>
+    <h2>Most interesting cities in <?php echo $country['name']; ?>: </h2>
+    <ul>
+        <?php foreach ($cities as $city): ?>
 
-        <li><b><?php echo $city['name']; ?></b></li>
+            <li><b><?php echo $city['name']; ?></b></li>
 
-    <?php endforeach; ?>
-</ul>
+        <?php endforeach; ?>
+    </ul>
 
-<h3> Add new city:</h3>
+    <h3> Add new city:</h3>
 
-<form method="POST">
+    <form method="POST">
 
-    <input name="name"></input>
+        <input name="name"></input>
 
-    <button type="submit">Submit</button>
-</form>
-
+        <button type="submit">Submit</button>
+    </form>
+</div>
 <div class="footer">
     <p>EJ 2020</p>
 </div>

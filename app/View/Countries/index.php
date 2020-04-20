@@ -16,29 +16,30 @@
     </div>
 </header>
 
-<h2>Here are all the countries you can see:</h2>
+<div class="content">
+    <h2>Here are all the countries you can see:</h2>
 
-<ul>
+    <ul>
 
-    <?php foreach ($countries as $country): ?>
+        <?php foreach ($countries as $country): ?>
 
-<!--        <li>--><?php //echo $country['name']; ?><!--</li>-->
+            <!--        <li>--><?php //echo $country['name']; ?><!--</li>-->
 
-        <li><a href='/countries/<?php echo $country['id']; ?>'><?php echo $country['name']; ?></a></li>
+            <li><a href='/countries/<?php echo $country['id']; ?>'><?php echo $country['name']; ?></a></li>
 
-    <?php endforeach; ?>
+        <?php endforeach; ?>
 
-</ul>
+    </ul>
 
-<h3> Add new country:</h3>
+    <h3> Add new country:</h3>
 
-<form method="POST">
+    <form method="POST">
 
-    <input name="name"></input>
+        <input name="name"></input>
 
-    <button type="submit">Submit</button>
-</form>
-
+        <button type="submit">Submit</button>
+    </form>
+</div>
 <div class="footer">
     <p>EJ 2020</p>
 </div>

@@ -1,12 +1,21 @@
 
 body{
-    background: lightblue;
+    background-image:url("https://wallpapercave.com/wp/Dq6o3uI.jpg");
     padding: 20px;
     font-family: "Lucida Console", Courier, monospace;
     font-size: large;
+    /*background: lightblue;*/
 }
 
 header{
+    border-style: solid;
+    border-color:black;
+    background: cadetblue;
+}
+
+.content{
+    padding:20px;
+    margin-top:25px;
     border-style: solid;
     border-color:black;
     background: cadetblue;
