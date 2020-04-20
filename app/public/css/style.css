@@ -1,0 +1,31 @@
+
+body{
+    background: lightblue;
+    padding: 20px;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+header{
+    border-style: solid;
+    border-color:black;
+    background: cadetblue;
+}
+
+.header__inner{
+    text-align: left;
+}
+a{
+    text-decoration: none;
+}
+a:link{
+    color:black;
+}
+
+a:visited{
+    color:black;
+}
+
+a:hover{
+    color:black;
+    font-weight: bold;
+}
