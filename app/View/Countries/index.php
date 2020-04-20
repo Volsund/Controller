@@ -17,13 +17,11 @@
 </header>
 
 <div class="content">
-    <h1>Here are all the countries you can see:</h1>
+    <h1>Explore countries:</h1>
 
     <ul>
 
         <?php foreach ($countries as $country): ?>
-
-            <!--        <li>--><?php //echo $country['name']; ?><!--</li>-->
 
             <li><a href='/countries/<?php echo $country['id']; ?>'><?php echo $country['name']; ?></a></li>
 

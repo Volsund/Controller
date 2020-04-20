@@ -14,14 +14,8 @@ class Database
         if (self::$instance === null) {
             self::$instance = $this;
         }
-
-        $this->connection = new Medoo([
-            'database_type' => 'mysql',
-            'database_name' => 'country_controller',
-            'server' => 'localhost',
-            'username' => 'edgarsj',
-            'password' => 'mysql4ever'
-        ]);
+        $config = require'config/configdata.php';
+        $this->connection = new Medoo($config);
 
     }
 

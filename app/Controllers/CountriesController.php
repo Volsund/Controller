@@ -19,6 +19,16 @@ class CountriesController
             'countries' => $countries
         ]);
     }
+    public function addCountry()
+    {
+        $country = ucfirst($_POST['name']);
+        $db = Database::getInstance()->connection();
+        $db->insert('countries', [
+            'name' => $country,
+        ]);
+
+        $this->index();
+    }
 
     public function show(array $params)
     {
@@ -42,20 +52,6 @@ class CountriesController
         ]);
     }
 
-    public function addCountry()
-    {
-        $country = ucfirst($_POST['name']);
-        $db = Database::getInstance()->connection();
-        $db->insert('countries', [
-            'name' => $country,
-        ]);
-
-        $countries = $db->select('countries', '*');
-
-        View::show('Countries/index.php', [
-            'countries' => $countries
-        ]);
-    }
 
     public function addCity(array $params)
     {
@@ -71,20 +67,6 @@ class CountriesController
             'country' => $countryName
         ]);
 
-        //Executing view again
-        $country = $db->select('countries', '*', [
-            'id[=]' => (int)$params['id']
-        ])[0];
-        $countryName= $country['name'];
-
-        $cities = $db->select('cities', '*',[
-            'country'=>$countryName
-        ]);
-
-        View::show('Countries/show.php', [
-            'country' => $country
-        ],[
-            'cities'=>$cities
-        ]);
+        $this->show($params);
     }
 }
