@@ -17,7 +17,7 @@
 </header>
 
 <div class="content">
-    <h2>Here are all the countries you can see:</h2>
+    <h1>Here are all the countries you can see:</h1>
 
     <ul>
 
