@@ -23,7 +23,11 @@
 
         <?php foreach ($countries as $country): ?>
 
-            <li><a href='/countries/<?php echo $country['id']; ?>'><?php echo $country['name']; ?></a></li>
+            <li>
+                <a href='/countries/<?php echo $country['id']; ?>'>
+                    <?php echo $country['name']; ?>
+                </a>
+            </li>
 
         <?php endforeach; ?>
 
