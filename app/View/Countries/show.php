@@ -36,5 +36,9 @@
     <button type="submit">Submit</button>
 </form>
 
+<div class="footer">
+    <p>EJ 2020</p>
+</div>
+
 </body>
 </html>

@@ -3,6 +3,7 @@ body{
     background: lightblue;
     padding: 20px;
     font-family: "Lucida Console", Courier, monospace;
+    font-size: large;
 }
 
 header{
@@ -11,8 +12,13 @@ header{
     background: cadetblue;
 }
 
-.header__inner{
-    text-align: left;
+.footer{
+ position:fixed;
+    left:0;
+    bottom:0;
+    width: 100%;
+    background-color:cadetblue;
+    text-align: center;
 }
 a{
     text-decoration: none;
