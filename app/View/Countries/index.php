@@ -27,6 +27,10 @@
                 <a href='/countries/<?php echo $country['id']; ?>'>
                     <?php echo $country['name']; ?>
                 </a>
+                <form class="delete" method="POST" action="/delete/countries/<?php echo $country['id']; ?>">
+                    <button type="submit">X</button>
+                </form>
+
             </li>
 
         <?php endforeach; ?>
@@ -35,7 +39,7 @@
 
     <h3> Add new country:</h3>
 
-    <form method="POST">
+    <form method="POST" action="/country/add">
 
         <input name="name"></input>
 

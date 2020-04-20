@@ -21,6 +21,7 @@ class CountriesController
     }
     public function addCountry()
     {
+
         $country = ucfirst($_POST['name']);
         $db = Database::getInstance()->connection();
         $db->insert('countries', [
@@ -68,5 +69,18 @@ class CountriesController
         ]);
 
         $this->show($params);
+    }
+
+    public function deleteCountry(array $params)
+    {
+        $idToDelete = (int)$params['id'];
+        $db = Database::getInstance()->connection();
+
+        $db->delete('countries',[
+            'AND'=>[
+                'id'=>$idToDelete
+            ]
+        ]);
+        $this->index();
     }
 }

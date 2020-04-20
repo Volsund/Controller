@@ -15,9 +15,11 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $rou
 
     $router->addRoute('GET', '/countries/{id:\d+}', 'CountriesController@show');
 
-    $router->addRoute('POST', '/', 'CountriesController@addCountry');
+    $router->addRoute('POST', '/country/add', 'CountriesController@addCountry');
 
     $router->addRoute('POST', '/countries/{id:\d+}', 'CountriesController@addCity');
+
+    $router->addRoute('POST','/delete/countries/{id:\d+}','CountriesController@deleteCountry');
 
 
 });

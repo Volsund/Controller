@@ -7,6 +7,10 @@ body{
     /*background: lightblue;*/
 }
 
+.delete{
+    display:inline-block;
+    padding:3px;
+}
 header{
     border-style: solid;
     border-color:black;
