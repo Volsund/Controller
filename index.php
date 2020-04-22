@@ -21,6 +21,10 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $rou
 
     $router->addRoute('POST','/delete/countries/{id:\d+}','CountriesController@deleteCountry');
 
+    $router->addRoute('POST','/delete/cities/{id:\d+}','CountriesController@deleteCity');
+
+
+
 
 });
 

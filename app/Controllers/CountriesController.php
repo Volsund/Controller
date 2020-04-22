@@ -19,6 +19,7 @@ class CountriesController
             'countries' => $countries
         ]);
     }
+
     public function addCountry()
     {
 
@@ -39,18 +40,32 @@ class CountriesController
         $country = $db->select('countries', '*', [
             'id[=]' => (int)$params['id']
         ])[0];
-        $countryName= $country['name'];
+        $countryName = $country['name'];
 
-        $cities = $db->select('cities', '*',[
-            'country'=>$countryName
+        $cities = $db->select('cities', '*', [
+            'country' => $countryName
         ]);
 
 
         View::show('Countries/show.php', [
             'country' => $country
-        ],[
-            'cities'=>$cities
+        ], [
+            'cities' => $cities
         ]);
+    }
+
+    public function deleteCity(array $params)
+    {
+        $idToDelete = (int)$params['id'];
+        $db = Database::getInstance()->connection();
+
+        $db->delete('cities', [
+            'AND' => [
+                'id' => $idToDelete
+            ]
+        ]);
+        header('Location: /');
+
     }
 
 
@@ -76,11 +91,11 @@ class CountriesController
         $idToDelete = (int)$params['id'];
         $db = Database::getInstance()->connection();
 
-        $db->delete('countries',[
-            'AND'=>[
-                'id'=>$idToDelete
+        $db->delete('countries', [
+            'AND' => [
+                'id' => $idToDelete
             ]
         ]);
-        $this->index();
+
     }
 }

@@ -23,7 +23,12 @@
     <ul>
         <?php foreach ($cities as $city): ?>
 
-            <li><b><?php echo $city['name']; ?></b></li>
+            <li>
+                <b><?php echo $city['name']; ?></b>
+                <form class="delete" method="POST" action="/delete/cities/<?php echo $city['id']; ?>">
+                    <button type="submit">X</button>
+                </form>
+            </li>
 
         <?php endforeach; ?>
     </ul>
